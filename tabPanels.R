@@ -4,9 +4,16 @@
 tP1 <- fluidPage(
   sidebarLayout(
     sidebarPanel(
-      sliderInput("tp1", "Initial population size", min  = 0, max = 20, step = 0.5, value = 15),
-      sliderInput("tp1b0", "Per capita birth rate", min = 0, max = 1, step = 0.01, value = 0.2),
-      sliderInput("tp1d0", "Per capita death rate", min = 0, max = 1, step = 0.01, value = 0.25)
+      helpText("Use the sliders to adjust the acres 
+               of construction in each reach in each 
+               year."),
+      sliderInput("tpGPbuild", "Gavin's Point", min  = 0, max = 400, step = 5, value = 45),
+      sliderInput("tpLCLbuild", "Lewis and Clark Lake", min = 0, max = 400, step = 5, value = 15),
+      sliderInput("tpFRbuild", "Fort Randall", min = 0, max = 400, step = 5, value = 15),
+      sliderInput("tpGRbuild", "Garrison", min = 0, max = 400, step = 5, value = 15),
+      sliderInput("tpFPbuild", "Fort Peck", min = 0, max = 400, step = 5, value = 15),
+      textOutput("tpAnnualCost", inline=TRUE),
+      actionButton("tpNextYear", "Next Year"),
     ),
     mainPanel(
       fluidRow(
