@@ -13,13 +13,18 @@ tP1 <- fluidPage(
       sliderInput("tpGRbuild", "Garrison", min = 0, max = 400, step = 5, value = 15),
       sliderInput("tpFPbuild", "Fort Peck", min = 0, max = 400, step = 5, value = 15),
       textOutput("tpAnnualCost", inline=TRUE),
-      actionButton("tpNextYear", "Next Year"),
+      actionButton("tpNextYear", "Next Year")
     ),
     mainPanel(
       fluidRow(
         column(6,plotOutput("tp1popByTime")),
-        column(6,plotOutput("tp1ratesByPop"))
+        column(6,plotOutput("tp1flowByTime"))
+      ),
+      fluidRow(
+        column(6,plotOutput("tp1ESHByTime")),
+        column(6,plotOutput("tp1DensityByReach"))
       )
+      
     )
   )
   
